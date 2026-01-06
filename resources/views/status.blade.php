@@ -10,7 +10,8 @@
             theme: {
                 extend: {
                     colors: {
-                        'subway-orange': '#FF6600',
+                        'subway-orange': '#ff6200',
+                        'subway-inner': '#3D3D3C',
                     }
                 }
             }
@@ -61,7 +62,7 @@
                     <div class="grid md:grid-cols-2 gap-6 mb-8">
                         <!-- Inner Circle -->
                         <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                            <div class="px-6 py-4 bg-gradient-to-r from-subway-orange to-orange-600">
+                            <div class="px-6 py-4" style="background-color: #3D3D3C;">
                                 <h2 class="text-xl font-bold text-white">Inner Circle</h2>
                             </div>
                             <div class="p-6">
@@ -77,7 +78,7 @@
 
                         <!-- Outer Circle -->
                         <div class="bg-white rounded-lg shadow-md overflow-hidden">
-                            <div class="px-6 py-4 bg-gradient-to-r from-subway-orange to-orange-600">
+                            <div class="px-6 py-4" style="background-color: #ff6200;">
                                 <h2 class="text-xl font-bold text-white">Outer Circle</h2>
                             </div>
                             <div class="p-6">
