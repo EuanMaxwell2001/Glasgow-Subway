@@ -92,8 +92,29 @@
             </div>
         </header>
 
+        <!-- Development Warning Banner -->
+        <div class="bg-gradient-to-r from-yellow-500 via-orange-500 to-red-500 text-white shadow-lg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+                <div class="flex items-start sm:items-center gap-3">
+                    <div class="flex-shrink-0 mt-0.5 sm:mt-0">
+                        <svg class="h-6 w-6 sm:h-7 sm:w-7 animate-pulse" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-base sm:text-lg font-bold mb-1">⚠️ Beta Version - Under Development</h3>
+                        <p class="text-sm sm:text-base font-medium opacity-95 leading-snug">
+                            This site is currently in development and data may not be accurate. Always verify service status with 
+                            <a href="https://www.spt.co.uk/service-updates/" target="_blank" rel="noopener" class="underline hover:text-yellow-100 font-bold">official SPT channels</a> 
+                            or <a href="https://twitter.com/GLASubwayTravel" target="_blank" rel="noopener" class="underline hover:text-yellow-100 font-bold">@GLASubwayTravel</a> before travel.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- Main Content -->
-        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 -mt-8">
+        <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div id="app">
                 <!-- Loading State -->
                 <div id="loading" class="text-center py-20">
@@ -238,8 +259,8 @@
                             <a href="https://www.spt.co.uk/travel-with-spt/subway/" target="_blank" class="block text-sm text-subway-orange hover:underline font-medium">
                                 → SPT Official Subway Page
                             </a>
-                            <a href="https://twitter.com/spt_subway" target="_blank" class="block text-sm text-subway-orange hover:underline font-medium">
-                                → SPT Subway on Twitter
+                            <a href="https://twitter.com/GLASubwayTravel" target="_blank" class="block text-sm text-subway-orange hover:underline font-medium">
+                                → @GLASubwayTravel on Twitter
                             </a>
                         </div>
                         <p class="text-xs text-gray-500 mt-4">Data updates every 10 minutes • Built with Laravel</p>
