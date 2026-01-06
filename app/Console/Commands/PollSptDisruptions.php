@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\ServiceUpdate;
+use App\Models\LineStatus;
 use App\Services\SptApiClient;
 use App\Services\DisruptionParser;
 use Illuminate\Console\Command;
@@ -84,7 +85,7 @@ class PollSptDisruptions extends Command
                            str_contains($snippet, 'subway');
 
                 if (!$isSubway) {
-                    $this->line("  Skipping non-subway: {$disruption['title']}");
+                    $this->line("  Non-subway disruption: {$disruption['title']}");
                     
                     if (!$dryRun) {
                         $this->saveServiceUpdate($disruption, $sourceId);
@@ -110,6 +111,12 @@ class PollSptDisruptions extends Command
                     // Update line statuses
                     $this->parser->updateLineStatuses($parsed, $sourceId);
                 }
+            }
+
+            // Set lines to "running" if no recent subway disruptions
+            if (!$dryRun && $subwayCount === 0) {
+                $this->info("  No subway disruptions - setting all lines to 'running'");
+                $this->setAllLinesRunning();
             }
 
             $this->info("\nSummary:");
@@ -179,5 +186,25 @@ class PollSptDisruptions extends Command
                     'updated_at' => now(),
                 ]
             );
+    }
+
+    /**
+     * Set all subway lines to running status
+     */
+    private function setAllLinesRunning(): void
+    {
+        $lines = ['inner', 'outer', 'system'];
+        
+        foreach ($lines as $line) {
+            LineStatus::updateOrCreate(
+                ['line' => $line],
+                [
+                    'status' => 'running',
+                    'message' => ucfirst($line) . ' Circle - Service Operating Normally',
+                    'last_update_at' => now(),
+                    'last_source_id' => null,
+                ]
+            );
+        }
     }
 }

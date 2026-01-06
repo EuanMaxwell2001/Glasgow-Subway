@@ -56,8 +56,9 @@ class StatusController extends Controller
         $limit = $request->query('limit', 20);
         $limit = min(max(1, (int)$limit), 100); // Between 1 and 100
 
-        $updates = ServiceUpdate::subwayOnly()
-            ->recent($limit)
+        // Show ALL service updates, not just subway
+        $updates = ServiceUpdate::orderBy('fetched_at', 'desc')
+            ->limit($limit)
             ->get()
             ->map(function ($update) {
                 return [
