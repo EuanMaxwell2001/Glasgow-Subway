@@ -1,0 +1,48 @@
+{
+  "results": [
+    {
+      "title": "Subway All Services - Part Suspended",
+      "snippet": "Due to planned engineering works, the entire subway network will operate with reduced service between 10:00 and 14:00. Expect longer waiting times.",
+      "url": "https://www.spt.co.uk/disruption/subway-engineering-005",
+      "publishedDate": "03/01/2026",
+      "disruptionType": "subway",
+      "image": null,
+      "linkText": "Engineering notice",
+      "linkDestination": "https://www.spt.co.uk/disruption/subway-engineering-005"
+    },
+    {
+      "title": "Outer Circle - Normal Service Resumed",
+      "snippet": "Following earlier disruption, the Outer Circle is now running normally. Thank you for your patience.",
+      "url": "https://www.spt.co.uk/disruption/outer-normal-006",
+      "publishedDate": "02/01/2026",
+      "disruptionType": "subway",
+      "image": null,
+      "linkText": "Update",
+      "linkDestination": "https://www.spt.co.uk/disruption/outer-normal-006"
+    },
+    {
+      "title": "Train Service Update - First ScotRail",
+      "snippet": "First ScotRail services between Glasgow Central and Edinburgh are experiencing minor delays.",
+      "url": "https://www.spt.co.uk/disruption/train-007",
+      "publishedDate": "01/01/2026",
+      "disruptionType": "train",
+      "image": null,
+      "linkText": "Rail update",
+      "linkDestination": "https://www.spt.co.uk/disruption/train-007"
+    },
+    {
+      "title": "Subway Closure Notice - New Year's Day",
+      "snippet": "Please note that Glasgow Subway will be closed all day on 1st January for the public holiday. Normal service resumes 2nd January.",
+      "url": "https://www.spt.co.uk/disruption/subway-closure-008",
+      "publishedDate": "31/12/2025",
+      "disruptionType": "subway",
+      "image": null,
+      "linkText": "Holiday hours",
+      "linkDestination": "https://www.spt.co.uk/disruption/subway-closure-008"
+    }
+  ],
+  "pages": 2,
+  "currentPage": 2,
+  "perPage": 10,
+  "totalResults": 14
+}

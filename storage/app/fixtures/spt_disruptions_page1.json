@@ -1,0 +1,48 @@
+{
+  "results": [
+    {
+      "title": "Glasgow Subway - Inner and Outer Circle Suspended",
+      "snippet": "Due to technical issues, both the Inner and Outer Circle services are currently suspended. No service is running. Engineers are working to resolve the issue. Please use alternative transport.",
+      "url": "https://www.spt.co.uk/disruption/subway-suspended-001",
+      "publishedDate": "06/01/2026",
+      "disruptionType": "subway",
+      "image": null,
+      "linkText": "More information",
+      "linkDestination": "https://www.spt.co.uk/disruption/subway-suspended-001"
+    },
+    {
+      "title": "Outer Circle - Delays Expected",
+      "snippet": "The Outer Circle is experiencing delays of up to 10 minutes due to a signal failure at Buchanan Street. Inner Circle services are operating normally.",
+      "url": "https://www.spt.co.uk/disruption/outer-delays-002",
+      "publishedDate": "05/01/2026",
+      "disruptionType": "subway",
+      "image": null,
+      "linkText": "View details",
+      "linkDestination": "https://www.spt.co.uk/disruption/outer-delays-002"
+    },
+    {
+      "title": "Bus Service Disruption on Route 44",
+      "snippet": "Route 44 is experiencing delays due to roadworks on Sauchiehall Street.",
+      "url": "https://www.spt.co.uk/disruption/bus-044-003",
+      "publishedDate": "05/01/2026",
+      "disruptionType": "bus",
+      "image": null,
+      "linkText": "More info",
+      "linkDestination": "https://www.spt.co.uk/disruption/bus-044-003"
+    },
+    {
+      "title": "Inner Circle Service Restored",
+      "snippet": "Inner Circle services have resumed and are now operating normally following earlier disruption. We apologize for any inconvenience caused.",
+      "url": "https://www.spt.co.uk/disruption/inner-restored-004",
+      "publishedDate": "04/01/2026",
+      "disruptionType": "subway",
+      "image": null,
+      "linkText": "Details",
+      "linkDestination": "https://www.spt.co.uk/disruption/inner-restored-004"
+    }
+  ],
+  "pages": 2,
+  "currentPage": 1,
+  "perPage": 10,
+  "totalResults": 14
+}
