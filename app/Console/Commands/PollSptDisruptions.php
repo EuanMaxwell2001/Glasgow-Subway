@@ -189,18 +189,46 @@ class PollSptDisruptions extends Command
     }
 
     /**
-     * Set all subway lines to running status
+     * Set all subway lines to running status (or closed if outside operating hours)
      */
     private function setAllLinesRunning(): void
     {
         $lines = ['inner', 'outer', 'system'];
         
+        // Check if subway is currently operating
+        $now = now();
+        $dayOfWeek = $now->dayOfWeek; // 0 = Sunday, 1 = Monday, etc.
+        $currentTime = $now->format('H:i');
+        
+        $isOperating = false;
+        $serviceMessage = '';
+        
+        if ($dayOfWeek === 0) {
+            // Sunday: 10:00 to 18:12
+            $isOperating = $currentTime >= '10:00' && $currentTime <= '18:12';
+            $serviceMessage = $isOperating 
+                ? 'Service Operating Normally' 
+                : 'Service Closed - Sunday hours: 10:00 to 18:12';
+        } else {
+            // Monday to Saturday: 06:30 to 23:40
+            $isOperating = $currentTime >= '06:30' && $currentTime <= '23:40';
+            $serviceMessage = $isOperating 
+                ? 'Service Operating Normally' 
+                : 'Service Closed - Mon-Sat hours: 06:30 to 23:40';
+        }
+        
+        $status = $isOperating ? 'running' : 'suspended';
+        
         foreach ($lines as $line) {
+            $message = $line === 'system' 
+                ? $serviceMessage 
+                : ucfirst($line) . ' Circle - ' . $serviceMessage;
+                
             LineStatus::updateOrCreate(
                 ['line' => $line],
                 [
-                    'status' => 'running',
-                    'message' => ucfirst($line) . ' Circle - Service Operating Normally',
+                    'status' => $status,
+                    'message' => $message,
                     'last_update_at' => now(),
                     'last_source_id' => null,
                 ]
